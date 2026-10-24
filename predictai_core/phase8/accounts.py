@@ -87,7 +87,7 @@ def register(username: str, password: str, special_code: str = "", owner_setup_s
     if len(password) < 10: raise ValueError("Password must be at least 10 characters long.")
     if email:
         import re
-        if len(email) > 254 or not re.fullmatch(r"[^\\s@]+@[^\\s@]+\\.[^\\s@]+", email):
+        if len(email) > 254 or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", email):
             raise ValueError("Enter a valid email address.")
     if _remote_enabled():
         data = _api("register", {"username": username, "password": password, "special_code": special_code or "",
