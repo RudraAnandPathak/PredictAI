@@ -100,7 +100,7 @@ hr { border-color:var(--pai-line) !important; }
 """, unsafe_allow_html=True)
 
 # Phase 8 account gate. The database is local to this installation by default.
-from predictai_core.phase8.accounts import register as register_account, authenticate, record_event
+from predictai_core.phase8.accounts import register as register_account, authenticate, record_event, get_account_status, daily_task_usage, reserve_daily_task, finish_daily_task
 if "predictai_user" not in st.session_state:
     st.session_state["predictai_user"] = None
 if not st.session_state["predictai_user"]:
